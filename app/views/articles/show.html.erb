@@ -1,0 +1,13 @@
+<h1 class="text-2xl font-bold mb-4">Article</h1>
+
+<%= link_to "← Back to articles", articles_path, class: "text-blue-500 hover:underline mb-4 inline-block" %>
+
+<div class="mb-4">
+  <p class="text-lg"><strong>Title:</strong> <%= @article.title %></p>
+  <p class="text-gray-700"><strong>Description:</strong> <%= @article.description %></p>
+</div>
+
+<div class="space-x-2">
+  <%= link_to "Edit", edit_article_path(@article), class: "text-yellow-600 hover:underline" %>
+  <%= link_to "Delete", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-red-600 hover:underline" %>
+</div>

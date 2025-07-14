@@ -22,7 +22,8 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="bg-gray-100 p-4">
+   <%= render "layouts/messages" %>
     <%= yield %>
   </body>
 </html>

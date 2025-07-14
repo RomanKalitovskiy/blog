@@ -1,0 +1,24 @@
+<% if @article.errors.any? %>
+  <div class="bg-red-100 text-red-700 border border-red-400 p-4 mb-4 rounded">
+    <h2 class="font-semibold">There were errors:</h2>
+    <ul class="list-disc list-inside">
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model: @article do |f| %>
+  <div class="mb-4">
+    <%= f.label :title, class: "block font-medium text-gray-700" %>
+    <%= f.text_field :title, class: "mt-1 block w-full border rounded px-3 py-2" %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :description, class: "block font-medium text-gray-700" %>
+    <%= f.text_area :description, class: "mt-1 block w-full border rounded px-3 py-2" %>
+  </div>
+
+  <%= f.submit class: "bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" %>
+<% end %>
